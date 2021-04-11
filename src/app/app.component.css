@@ -19,7 +19,22 @@ button {
   width: 100%
 }
 
-.cdk-focused *:focus {
-  outline: transparent 2px solid !important;
-  box-shadow: 0 0 0 2px white, 0 0 0 4px #007eff !important;
+.cdk-keyboard-focused *:focus {
+  outline: transparent 2px solid;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #007eff;
+}
+
+.cdk-mouse-focused *:focus {
+  outline: transparent 2px solid;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px rgb(9, 146, 37);
+}
+
+.cdk-program-focused *:focus {
+  outline: transparent 2px solid;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px rgb(173, 72, 59);
+}
+
+.cdk-touch-focused *:focus {
+  outline: transparent 2px solid;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px rgb(176, 97, 241);
 }
