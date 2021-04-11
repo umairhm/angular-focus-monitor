@@ -1,0 +1,25 @@
+html, body {
+  height: 100%
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 400px;
+}
+
+button {
+  width: 100%
+}
+
+.cdk-focused *:focus {
+  outline: transparent 2px solid !important;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #007eff !important;
+}
