@@ -8,14 +8,14 @@ import { FocusMonitor, FocusOrigin } from '@angular/cdk/a11y';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit  {
-  name = 'Angular ' + VERSION.major;
-
+  focusOrigin: FocusOrigin;
   constructor(
     private el: ElementRef,
     private focusMonitor: FocusMonitor
   ) {}
 
   ngOnInit() {
-    this.focusMonitor.monitor(this.el.nativeElement, true);
+    this.focusMonitor.monitor(this.el.nativeElement, true)
+      .subscribe(origin => this.focusOrigin = origin);
   }
 }
