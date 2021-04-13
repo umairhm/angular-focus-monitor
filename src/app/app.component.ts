@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, VERSION, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewEncapsulation } from '@angular/core';
 import { FocusMonitor, FocusOrigin } from '@angular/cdk/a11y';
 
 @Component({
@@ -9,6 +9,7 @@ import { FocusMonitor, FocusOrigin } from '@angular/cdk/a11y';
 })
 export class AppComponent implements OnInit  {
   focusOrigin: FocusOrigin;
+  appliedCssClasses: string;
   constructor(
     private el: ElementRef,
     private focusMonitor: FocusMonitor
@@ -16,6 +17,12 @@ export class AppComponent implements OnInit  {
 
   ngOnInit() {
     this.focusMonitor.monitor(this.el.nativeElement, true)
-      .subscribe(origin => this.focusOrigin = origin);
+      .subscribe(origin => {
+        this.focusOrigin = origin;
+        this.appliedCssClasses = '';
+        if (origin) {
+          this.appliedCssClasses = `cdk-focused cdk-${origin}-focused`;
+        }
+      });
   }
 }
